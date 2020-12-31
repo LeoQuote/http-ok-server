@@ -34,7 +34,7 @@ func main() {
 		contents, _ := ioutil.ReadAll(r.Body)
 
 		fmt.Printf("Body:\n")
-		fmt.Printf("%s", string(contents))
+		fmt.Printf("%s\n", string(contents))
 
 		w.WriteHeader(http.StatusOK)
 		w.Write([]byte("200 OK"))
