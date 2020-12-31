@@ -19,7 +19,7 @@ func main() {
 		fmt.Printf("Protocol: %s\n", r.Proto)
 		fmt.Printf("Host: %s\n", r.Host)
 		fmt.Printf("Method: %s\n", r.Method)
-		fmt.Printf("Path: %s\n", r.URL.Path)
+		fmt.Printf("Request: %s\n", r.RequestURI)
 
 		headerNames := make([]string, 0, len(r.Header))
 		for headerName := range r.Header {
