@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"sort"
+	"time"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 	flag.Parse()
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Printf("--- %s ---\n", time.Now().Format(time.RFC3339))
 		fmt.Printf("Protocol: %s\n", r.Proto)
 		fmt.Printf("Host: %s\n", r.Host)
 		fmt.Printf("Method: %s\n", r.Method)
