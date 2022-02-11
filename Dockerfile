@@ -13,3 +13,4 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GO111MODULE=on go build -v -a -ldflags
 FROM scratch
 COPY --from=build-env /go/bin/http-ok-server /usr/bin/http-ok-server
 ENTRYPOINT ["http-ok-server"]
+ARG ["-port", "80"]
